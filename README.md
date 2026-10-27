@@ -61,6 +61,12 @@ downloads/
 - Gửi `Referer` đúng trang chương (một số máy chủ ảnh yêu cầu).
 
 ## Giới hạn
+T.B.U
+
+## 1st attempt command (27 Oct 2026)
+python .\downloader.py "https://nettruyen.gg/truyen-tranh/itto-con-loc-san-co-nxb-kim-dong" --chapter-selector "#chapter_list > li:nth-child(8) > div.col-xs-5.chapter > a"  --image-selector "div.reading-detail img" --reverse --cbz --confirm-rights
+
+
 
 - Chỉ đọc HTML tĩnh. Nếu danh sách chương hoặc ảnh được nạp bằng JavaScript/API, hãy lấy danh sách URL chương từ tab Network của trình duyệt, lưu vào file `.txt` rồi dùng `--chapters-file`.
 - Nếu trang có nút "Xem thêm" để hiện thêm chương, cần xử lý riêng (gọi API mà nút đó dùng).
