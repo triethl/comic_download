@@ -46,6 +46,31 @@ downloads/
     └── ...
 ```
 
+## Giao diện đồ họa (GUI)
+
+```powershell
+py gui.py
+```
+
+(`gui.py` và `downloader.py` phải nằm cùng thư mục. Giao diện dùng `tkinter`, có sẵn khi cài Python từ python.org.)
+
+Các bước:
+
+1. Nhập URL trang truyện, selector link chương và selector ảnh.
+2. Tick ô xác nhận bạn có quyền sao chép nội dung.
+3. Bấm **Tải danh sách chương**. Danh sách hiện trong khung giữa; chọn chương muốn tải (Ctrl/Shift để chọn nhiều), không chọn gì thì tải tất cả.
+4. Bấm **Bắt đầu tải**. Thanh tiến trình và nhật ký cho biết tiến độ; bấm **Dừng** để dừng giữa chừng, chạy lại sẽ tải tiếp phần còn thiếu.
+5. Bấm **Mở thư mục** để xem kết quả.
+
+### Đóng gói thành file .exe (Windows)
+
+```powershell
+py -m pip install pyinstaller
+py -m PyInstaller --onefile --windowed gui.py
+```
+
+File `dist\gui.exe` chạy được trên máy khác mà không cần cài Python.
+
 ## Tìm CSS selector
 
 1. Mở trang truyện trong trình duyệt, nhấn **F12**.
@@ -61,12 +86,6 @@ downloads/
 - Gửi `Referer` đúng trang chương (một số máy chủ ảnh yêu cầu).
 
 ## Giới hạn
-T.B.U
-
-## 1st attempt command (27 Oct 2026)
-python .\downloader.py "https://nettruyen.gg/truyen-tranh/itto-con-loc-san-co-nxb-kim-dong" --chapter-selector "#chapter_list > li:nth-child(8) > div.col-xs-5.chapter > a"  --image-selector "div.reading-detail img" --reverse --cbz --confirm-rights
-
-
 
 - Chỉ đọc HTML tĩnh. Nếu danh sách chương hoặc ảnh được nạp bằng JavaScript/API, hãy lấy danh sách URL chương từ tab Network của trình duyệt, lưu vào file `.txt` rồi dùng `--chapters-file`.
 - Nếu trang có nút "Xem thêm" để hiện thêm chương, cần xử lý riêng (gọi API mà nút đó dùng).
