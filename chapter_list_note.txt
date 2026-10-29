@@ -1,0 +1,5 @@
+#chapter-list > div > div > div:nth-child(1) > div.item-name > a
+#chapter-list div.item-name > a
+
+#nt_listchapter > nav > ul > li:nth-child(2) > div.col-xs-5.chapter > a
+#content > div.chapters-list > ul > li:nth-child(1) > a
